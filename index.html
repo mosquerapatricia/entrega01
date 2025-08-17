@@ -3,21 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="login.js"></script>
-    <title>Document</title>
+    <title>Iniciar Sesión</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: -1px;
+            margin-bottom: 1px;
+        }
+    </style>
 </head>
 <body>
     <div>
-        <h1> Iniciar Sesión</h1>
-        <form>
-        Usuario<input type="text"> <br>
-        Contraseña<input type="password"> <br>
-                <button type="submit">Ingresar</button>
+        <h1>Iniciar Sesión</h1>
+        <form id="loginForm">
+            Usuario <input type="text" id="usuario"><br>
+            <div id="usuarioError" class="error"></div>
+            
+            Contraseña <input type="password" id="contrasena"><br>
+            <div id="contrasenaError" class="error"></div>
+            
+            <button type="submit">Ingresar</button>
         </form>
-        <a src="#">¿Olvidaste tu contraseña?</h3> <br>
-        <a src="#">Crear cuenta</a>
+        <a href="#">¿Olvidaste tu contraseña?</a><br>
+        <a href="#">Crear cuenta</a>
     </div>
-<a src="#">Volver</a>
+    <a href="#">Volver</a>
    
+    <script src="login.js"></script>
 </body>
 </html>
