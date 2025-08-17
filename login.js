@@ -1,28 +1,28 @@
 document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evita el envío por defecto
-            
-            const usuario = document.getElementById('usuario').value();
-            const contrasena = document.getElementById('contrasena').value();
-            let isValid = true;
+    event.preventDefault(); // Evita el envío por defecto
+    
+    const usuario = document.getElementById('usuario').value.trim();
+    const contrasena = document.getElementById('contrasena').value.trim();
+    let valid = true;
 
-            // Validación de usuario
-            if (usuario === '') {
-                document.getElementById('usuarioError').textContent = 'Ingresa tu usuario';
-                isValid = false;
-            } else {
-                document.getElementById('usuarioError').textContent = '';
-            }
+    // Resetear mensajes de error
+    document.getElementById('usuarioError').textContent = '';
+    document.getElementById('contrasenaError').textContent = '';
 
-            // Validación de contraseña
-            if (contrasena === '') {
-                document.getElementById('contrasenaError').textContent = 'Ingresa tu contraseña';
-                isValid = false;
-            } else {
-                document.getElementById('contrasenaError').textContent = '';
-            }
+    // Validación de usuario
+    if (usuario === '') {
+        document.getElementById('usuarioError').textContent = 'Ingresa tu usuario';
+        valid = false;
+    }
 
-            // Redirección si es válido
-            if (isValid) {
-                window.location.href = 'products.html';
-            }
-        });
+    // Validación de contraseña
+    if (contrasena === '') {
+        document.getElementById('contrasenaError').textContent = 'Ingresa tu contraseña';
+        valid = false;
+    }
+
+    // Redirección si es válido
+    if (valid) {
+        window.location.href = 'products.html';
+    }
+});
